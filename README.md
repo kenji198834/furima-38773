@@ -22,7 +22,7 @@ has_many :comments
 
 | Column           | Type       | Options     | 
 | ---------------- | -----------| -------     |
-| user_id          | references | null: false, foreign_key: true|
+| user             | references | null: false, foreign_key: true|
 | name             | string     | null: false |
 | description      | text       | null: false |
 | category_id      | integer    | null: false |
@@ -42,8 +42,8 @@ has_one_attached :image
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -54,7 +54,7 @@ has_one :payment
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| order_id      | references | null: false, foreign_key: true |
+| order         | references | null: false, foreign_key: true |
 | postcode      | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
@@ -69,8 +69,8 @@ belongs_to :order
 
 | Column  | Type       | Options                        |
 | ------  | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 | text    | text       | null: false                    |
 
 ### Association
