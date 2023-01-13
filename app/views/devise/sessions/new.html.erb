@@ -1,6 +1,6 @@
-<%# <%= render "shared/second-header" %>
+<%= render "shared/second-header"%>
 
-<%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -11,7 +11,6 @@
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -32,4 +31,4 @@
 </div>
 <% end %>
 
-<%# <%= render "shared/second-footer" %>
+<%= render "shared/second-footer"%>

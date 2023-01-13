@@ -1,33 +1,7 @@
-<%# <%= render "shared/header" %>
+<%= render "shared/header" %>
 <div class='main'>
 
-<%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
-  </div>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
-    </ul>
-    <ul class='lists-right'>
-      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li>
-      <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li>
-      <li><%= link_to 'ログイン', root_path, class: "login" %></li>
-      <li><%= link_to '新規登録', root_path, class: "sign-up" %></li>
-      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-    </ul>
-  </div>
-</header>
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+<%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
       人生を変えるフリマアプリ
@@ -212,48 +186,5 @@
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
-<%# 下部広告部分 %>
-<div class='ad-footer-contents'>
-  <p class='ad-footer-explain'>
-    だれでもかんたん、人生を変えるフリマアプリ
-  </p>
-  <h2 class='ad-footer-title'>
-    今すぐ無料ダウンロード！
-  </h2>
-  <div class='store-btn'>
-    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
-  </div>
-</div>
-<%# /下部広告部分 %>
-<div class='footer'>
-  <div class='footer-contents'>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>FURIMAについて</h2>
-      <ul>
-        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
-        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
-        <li><%= link_to 'FURIMA利用規約', "#", class: "footer-link" %></li>
-        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>FURIMAを見る</h2>
-      <ul>
-        <li><%= link_to 'カテゴリー一覧', "#", class: "footer-link" %></li>
-        <li><%= link_to 'ブランド一覧', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>FURIMAについて</h2>
-      <ul>
-        <li><%= link_to 'FURIMAガイド', "#", class: "footer-link" %></li>
-        <li><%= link_to 'FURIMAロゴ利用ガイドライン', "#", class: "footer-link" %></li>
-        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-  </div>
-  <%= link_to image_tag("furima-logo-white.png", class:"logo-white"), "#" %>
-  <p>© FURIMA</p>
-</div>
-<%# <%= render "shared/footer" %>
+
+<%= render "shared/footer" %>
