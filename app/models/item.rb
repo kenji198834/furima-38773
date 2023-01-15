@@ -15,4 +15,6 @@ class Item < ApplicationRecord
   
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
                     presence: { message: "can't be blank" }
+#ジャンルの選択が「---」の時は保存できないようにする
+validates :category_id, numericality: { other_than: 1 }
 end
