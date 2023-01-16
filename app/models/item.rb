@@ -3,6 +3,9 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  belongs_to :item_status
+  belongs_to :shipping_cost
+  belongs_to :prefecture
   
   validates :user_id, presence: true
   validates :image, presence: true
