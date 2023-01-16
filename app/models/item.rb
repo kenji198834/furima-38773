@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_one_attached :image
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -23,5 +24,9 @@ class Item < ApplicationRecord
 #ジャンルの選択が「---」の時は保存できないようにする
   with_options numericality: { other_than: 1, message:"can't be blank"} do
     validates :category_id
+    validates :item_status_id
+    validates :shipping_cost_id
+    validates :prefecture_id
+    validates :shipping_date_id
   end
 end
