@@ -4,11 +4,11 @@ class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :user
 
-  belongs_to :category
-  belongs_to :item_status
-  belongs_to :shipping_cost
-  belongs_to :prefecture
-  belongs_to :shipping_date
+  belongs_to_active_hash :category
+  belongs_to_active_hash :item_status
+  belongs_to_active_hash :shipping_cost
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :shipping_date
   
   validates :user_id, presence: true
   validates :image, presence: true
