@@ -22,7 +22,7 @@ class Item < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
                     presence: { message: "can't be blank" }
   # ジャンルの選択が「---」の時は保存できないようにする
-  with_options numericality: { other_than: 1, message: "must be other than 1" } do
+  with_options numericality: { other_than: 1, message: 'must be other than 1' } do
     validates :category_id
     validates :item_status_id
     validates :shipping_cost_id
