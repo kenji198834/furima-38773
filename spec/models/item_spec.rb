@@ -15,7 +15,7 @@ RSpec.describe Item, type: :model do
       it 'userが紐づいていないと出品できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
       it '1枚画像がないと出品できない' do
         @item.image = nil
@@ -35,7 +35,7 @@ RSpec.describe Item, type: :model do
       it 'カテゴリの情報に「---」が選択されている場合は出品できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'カテゴリーの情報が空欄だと出品できない' do
         @item.category_id = nil
@@ -45,7 +45,7 @@ RSpec.describe Item, type: :model do
       it '商品の状態の情報に「---」が選択されている場合は出品できない' do
         @item.item_status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item status must be other than 1")
+        expect(@item.errors.full_messages).to include('Item status must be other than 1')
       end
       it '商品の状態の情報が空欄だと出品できない' do
         @item.item_status_id = nil
@@ -55,7 +55,7 @@ RSpec.describe Item, type: :model do
       it '配送料の負担の情報に「---」が選択されている場合は出品できない' do
         @item.shipping_cost_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping cost must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping cost must be other than 1')
       end
       it '配送料の負担の情報が空欄だと出品できない' do
         @item.shipping_cost_id = nil
@@ -65,7 +65,7 @@ RSpec.describe Item, type: :model do
       it '発送元の地域の情報に「---」が選択されている場合は出品できない' do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it '発送元の地域の情報が空欄だと出品できない' do
         @item.prefecture_id = nil
@@ -75,7 +75,7 @@ RSpec.describe Item, type: :model do
       it '発送までの日数の情報に「---」が選択されている場合は出品できない' do
         @item.shipping_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping date must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping date must be other than 1')
       end
       it '発送までの日数の情報が空欄だと出品できない' do
         @item.shipping_date_id = nil
