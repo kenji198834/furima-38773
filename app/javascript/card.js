@@ -1,0 +1,29 @@
+const pay = () => {
+  const payjp = Payjp(process.env.PAYJP_PUBLIC_KEY);
+  const elements = payjp.elements();
+  const numberElement = elements.create('cardNumber')
+  const expiryElement = elements.create('cardExpiry')
+  const cvcElement = elements.create('cardCvc')
+  
+  numberElement.mount('#number')
+  expiryElement.mount('#exp-date')
+  cvcElement.mount('#cvc')
+
+  const form = document.getElementById("charge-form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    payjp.createToken(expiryElement).then((response) => {
+      if (response.error) {
+      } else {
+        const token = response.id;
+        const renderDom = document.getElementById("charge-form");
+        const token0bj = `<input value=${token} name='token' type="hidden">`;
+        renderDom.insertAdjacentHTML("beforeend", token0bj);
+      }
+      document.getElementById("charge-form").submit();
+    });
+  });
+};
+
+window.addEventListener("load", pay);
