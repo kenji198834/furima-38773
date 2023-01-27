@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :orders
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates :password, format: {with: VALID_PASSWORD_REGEX, message: 'Include both letters and numbers'}
+  validates :password, format: {with: VALID_PASSWORD_REGEX, message: 'は英字と数字の両方を含めて入力してください'}
   validates :nickname, presence: true
   validates :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
   validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
